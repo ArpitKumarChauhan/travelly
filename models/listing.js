@@ -7,19 +7,11 @@ const listingSchema = new Schema({
     },
     description: String,
     image: {
-        filename: {
             type: String,
-            //required: true
-        },
-        url: {
-            type: String,
-            //required: true,
-            default: "https://images.pexels.com/photos/30052108/pexels-photo-30052108.jpeg",
             set: (v) =>
             v === ""
                 ? "https://images.pexels.com/photos/30052108/pexels-photo-30052108.jpeg"
                 : v,
-        },
     },
     price: Number,
     location: String,
